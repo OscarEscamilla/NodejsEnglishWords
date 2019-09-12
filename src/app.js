@@ -9,10 +9,13 @@ const mysql_store = require('express-mysql-session');
 //const mysql = require('mysql');//modulo para conectar a mysql
 //const myConnection = require('express-myconnection');// genera conexion
 const {database} = require('./keys.js');
-
+//autenticacion
+const passport  = require('passport');
 //inicializacion
 
-const app = express();
+const app = express()
+
+require('./lib/passport.js');
 
 //configuraciones
 
@@ -55,6 +58,9 @@ app.use(flash());
 app.use(morgan('dev'));//muestra peticiones por conola
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 
 

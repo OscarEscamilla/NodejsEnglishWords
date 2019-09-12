@@ -9,7 +9,8 @@ controller = {}
 controller.list = async(req, res) =>{
     const links = await model.get_all();
     console.log('datos obtenidos correctamente')
-    res.render('links/list.hbs',{links});  
+    //res.render('links/list.hbs',{links});  
+    res.json(links);
 }
 
 
