@@ -1,5 +1,22 @@
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+body{
+    height: 100%;
+    background-image: url('../img/free-wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    
+}
+
+
 #logo-utec{
     height: 10em;
     width: 9em;
-    float: center;
+    display:block;
+    margin:auto;
 }

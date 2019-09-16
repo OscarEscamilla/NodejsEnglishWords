@@ -22,9 +22,9 @@ passport.use('local.signin', new localStrategy({
 
         console.log(user.password);
         if(compare){
-            done(null, user, req.flash('success', 'welcome' + user.username));
+            done(null, user, req.flash('success', 'Welcome ' + user.fullname));
         }else{
-            done(null, false, req.flash('message','incorrect Password'));
+            done(null, false, req.flash('message','Incorrect Password'));
         }
     }else{
         return done(null, false, req.flash('message','El usuario no existe'));

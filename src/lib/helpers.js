@@ -17,4 +17,19 @@ helpers.compararPassword = async (password, savedPassword) =>{
     }
 }
 
+
+helpers.isLoggedIn = (req, res , next) =>{
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    return res.redirect('/signin');
+}
+
+helpers.isLog = (req, res, next) =>{
+    if (req.isAuthenticated()) {
+        return res.redirect('/links');
+    }
+
+    return next();
+}
 module.exports = helpers;
