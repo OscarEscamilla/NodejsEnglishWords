@@ -5,8 +5,17 @@ const router = Router();
 
 const passport = require('passport');
 
-router.get('/singin',(req, res) =>{
-    res.send('login');
+router.get('/signin',(req, res) =>{
+    res.render('login/login.hbs');
+});
+
+router.post('/signin',(req, res, next) =>{
+    passport.authenticate('local.signin', {
+        successRedirect: '/profile',
+        failureRedirect: '/signin',
+        failureFlash: true
+    })(req, res, next);
+    
 });
 
 router.get('/signup',(req, res) =>{
@@ -16,14 +25,20 @@ router.get('/signup',(req, res) =>{
 
 router.post('/signup',  passport.authenticate('local.signup', {
     successRedirect: '/profile',
-    failureRedirect: '/signup',
+    failureRedirect:  '/signup',
     failureFlash: true
 }));
 
 
-router.get('/logout/:name/:edad',(req, res) =>{
+router.get('/logout/{params}',(req, res) =>{
     console.log(req.params);
 });
+
+
+router.get('/profile',(req, res) =>{
+    res.send('this is your profile');
+});
+
 
 
 

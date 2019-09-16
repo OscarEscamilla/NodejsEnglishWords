@@ -68,6 +68,7 @@ app.use(passport.session());
 
 app.use((req,res, next) => {
     app.locals.success = req.flash('success');
+    app.locals.message = req.flash('message');
     next();
 });
 
@@ -87,5 +88,5 @@ app.use('/links', require('./routes/links.js'));
 
 //starting server
 app.listen(app.get('port'), ()=>{
-    console.log('server on port 3000');
+    console.log('server on port '+ app.get('port'));
 });
