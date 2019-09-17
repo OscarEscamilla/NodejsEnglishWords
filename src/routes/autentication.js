@@ -4,11 +4,11 @@ const passport = require('passport');
 
 const helpers = require('../lib/helpers.js');
 
-router.get('/signin',helpers.isLog,(req, res) =>{
+router.get('/signin',helpers.isNotLoggedIn,(req, res) =>{
     res.render('login/login.hbs');
 });
 
-router.post('/signin',helpers.isLog,(req, res, next) =>{
+router.post('/signin',helpers.isNotLoggedIn,(req, res, next) =>{
     passport.authenticate('local.signin', {
         successRedirect: '/profile',
         failureRedirect: '/signin',
@@ -17,12 +17,12 @@ router.post('/signin',helpers.isLog,(req, res, next) =>{
 
 });
 
-router.get('/signup',helpers.isLog,(req, res) =>{
+router.get('/signup',helpers.isNotLoggedIn,(req, res) =>{
     res.render('login/signup.hbs');
 });
 
 
-router.post('/signup', helpers.isLog, passport.authenticate('local.signup', {
+router.post('/signup', helpers.isNotLoggedIn, passport.authenticate('local.signup', {
     successRedirect: '/profile',
     failureRedirect:  '/signup',
     failureFlash: true

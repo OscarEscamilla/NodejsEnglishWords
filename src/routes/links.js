@@ -8,7 +8,7 @@ const helpers = require('../lib/helpers.js');
 
 //precede de el prefijo /links configurado en app.js 
 //         /links
-router.get('/', controller.list);
+router.get('/', helpers.isLoggedIn,controller.list);
 
 //renderiza el frmulario para agregar un nuevo link
 router.get('/add', helpers.isLoggedIn, controller.form_add);

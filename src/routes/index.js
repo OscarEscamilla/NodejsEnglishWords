@@ -6,7 +6,7 @@ const router = Router();
 
 
 router.get('/',(req, res) =>{
-    res.send('hola mundo');
+    res.render('index.hbs');
 });
 
 

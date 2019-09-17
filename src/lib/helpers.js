@@ -25,7 +25,7 @@ helpers.isLoggedIn = (req, res , next) =>{
     return res.redirect('/signin');
 }
 
-helpers.isLog = (req, res, next) =>{
+helpers.isNotLoggedIn = (req, res, next) =>{
     if (req.isAuthenticated()) {
         return res.redirect('/links');
     }
