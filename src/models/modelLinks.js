@@ -3,9 +3,9 @@ const con = require('../database.js');
 model = {}
 
 
-model.get_all = () => {
+model.get_all = (id_user) => {
   
-    return  con.query('SELECT * FROM links');
+    return  con.query('SELECT * FROM links WHERE id_user = ?',[id_user]);
 }
 
 model.delete = (id) =>{

@@ -7,7 +7,8 @@ controller = {}
 
 
 controller.list = async(req, res) =>{
-    const links = await model.get_all();
+    const id_user = req.user.id;
+    const links = await model.get_all(id_user);
     console.log('datos obtenidos correctamente')
     res.render('links/list.hbs',{links});
     /*
@@ -25,16 +26,19 @@ controller.form_add = (req, res) =>{
 
 controller.save_link = async(req, res) =>{
     const {title , url, description} = req.body;
+    const id_user = req.user.id;
     const newLink = {
         title,
         url,
-        description
+        description,
+        id_user
     };
 
     const result = await model.save(newLink); /*con.query('INSERT INTO links set ?', [newLink]);*/
     
     if(result.affectedRows == 1){
         req.flash('success', '!Link guardado correctamente!');
+
         console.log('***Insert data complet***');
         
     }
