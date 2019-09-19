@@ -6,6 +6,8 @@ const controller = require('../controllers/linksController.js');
 
 const helpers = require('../lib/helpers.js');
 
+
+
 //precede de el prefijo /links configurado en app.js 
 //         /links
 router.get('/', helpers.isLoggedIn,controller.list);

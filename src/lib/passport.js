@@ -1,8 +1,31 @@
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 const con = require('../database.js');
 const helpers = require('../lib/helpers.js');
+
+
+//metodos de login con facebook
+
+passport.use('facebook', new FacebookStrategy({
+    clientID: '2113463745624148',
+    clientSecret: '0cc382b0cb986d89854786750286c981',
+    callbackURL: "/auth/facebook/callback",
+    //profileFields: ["id", "displayName", "provider", "photos"],
+  },async function(accessToken, refreshToken, profile, cb) {
+      /*
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+    */
+
+    console.log(profile._json);
+    
+
+  }
+));
+
 
 passport.use('local.signin', new localStrategy({
     usernameField: 'username', //pasamos el nombre del input por el que lo va recibir
@@ -53,6 +76,8 @@ passport.use('local.signup', new localStrategy({
     }
     
 }));
+
+
 
 
 passport.serializeUser(function(user, done) {

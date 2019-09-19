@@ -32,6 +32,7 @@ router.post('/signup', helpers.isNotLoggedIn, passport.authenticate('local.signu
 
 
 
+
 router.get('/profile',helpers.isLoggedIn,(req, res) =>{
     
     res.render('profile.hbs');
@@ -43,6 +44,15 @@ router.get('/logout', (req, res)=>{
     res.redirect('/signin');
 });
 
+//facebook routes
+
+router.get('/auth/facebook', passport.authenticate('facebook'));
+
+router.get('/auth/facebook/callback', passport.authenticate('facebook',{ 
+    failureRedirect: '/login',
+    successRedirect: '/',
+    failureFlash: true
+}));
 
 
 

@@ -2,6 +2,8 @@ const con = require('../database.js');
 const model = require('../models/modelLinks.js');
 
 
+
+
 controller = {}
 
 
@@ -11,11 +13,13 @@ controller.list = async(req, res) =>{
     const links = await model.get_all(id_user);
     console.log('datos obtenidos correctamente')
     res.render('links/list.hbs',{links});
+    
     /*
     const result = [];
     result.push({links: links});  
     res.json(result[0]);
     */
+    
 }
 
 
@@ -83,9 +87,10 @@ controller.update = async(req, res) =>{
     }
     res.redirect('/links');
 
-}
-
+} 
 
 
 
 module.exports = controller;
+
+

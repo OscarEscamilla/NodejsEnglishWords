@@ -21,3 +21,8 @@ body{
     display:block;
     margin:auto;
 }
+
+.btn-facebook{
+    background-color: rgb(42, 42, 202) !important;
+    border: 0ch;
+}

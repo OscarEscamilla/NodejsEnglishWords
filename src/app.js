@@ -11,6 +11,8 @@ const mysql_store = require('express-mysql-session');
 const {database} = require('./keys.js');
 //autenticacion
 const passport  = require('passport');
+
+const fb_passport = require('passport-facebook');
 //inicializacion
 
 const app = express()
@@ -60,7 +62,6 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 
 
