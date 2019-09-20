@@ -1,20 +1,28 @@
 <div class="container p-4">
     <div class="row">
-        <div class="col-md-4  mx-auto">
+        <div class="col-md-6  mx-auto">
             <div class="card">
                 <div class="s card-header">
-                   <h3 class="text-success">Update Link</h3>
+                   <h3 class="text-success">Update Word</h3>
                 </div>
                 <div class="bg-grey card-body">
-                    <form action="/links/update/{{link.id}}" method="post">
+                    <form action="/links/update/{{word.id}}" method="post">
                         <div class="form-group">
-                            <input type="text" value="{{link.title}}" name="title" placeholder="Title" class="form-control form-control-sm" autofocus>
+                            <input type="text" name="word" placeholder="word" value={{word.word}} class="form-control form-control-sm" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" value="{{link.url}}" name="url" placeholder="Url" class="form-control form-control-sm">
+                            <input type="text" name="pronunciation" placeholder="pronunciation" value={{word.pronunciation}}  class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
-                            <textarea name="description" id="" cols="10" rows="5" class="form-control form-control-sm">{{link.description}}</textarea>
+                            <label for="">Meaning</label>
+                            <textarea name="meaning" id="" cols="10" rows="3" class="form-control form-control-sm" >{{word.meaning}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Example</label>
+                            <textarea name="example" id="" cols="10" rows="3" class="form-control form-control-sm">{{word.example}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="synonymous" placeholder="synonymous" value={{word.synonymous}} class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
                              <button type="submit" class="btn btn-success btn-sm btn-block">Save <i class="far fa-save"></i></button>

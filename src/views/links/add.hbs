@@ -1,22 +1,32 @@
 <div class="container p-4">
     <div class="row">
-        <div class="col-md-4  mx-auto">
+        <div class="col-md-6  mx-auto">
             <div class="card">
                 <div class="card-header">
-                   <h3 class="text-success">Add Link</h3>
+                   <h3 class="text-success">Add Word</h3>
                 </div>
                 <div class="bg-grey card-body">
                     <form action="/links/add" method="post">
                         <div class="form-group">
-                            <input type="text" name="title" placeholder="Title" class="form-control form-control-sm" autofocus>
+                            <input type="text" name="word" placeholder="word" class="form-control form-control-sm" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="url" placeholder="Url" class="form-control form-control-sm">
+                            <input type="text" name="pronunciation" placeholder="pronunciation" class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
-                            <textarea name="description" id="" cols="10" rows="5" class="form-control form-control-sm">
+                            <label for="">Meaning</label>
+                            <textarea name="meaning" id="" cols="10" rows="3" class="form-control form-control-sm" >
 
                             </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Example</label>
+                            <textarea name="example" id="" cols="10" rows="3" class="form-control form-control-sm">
+
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="synonymous" placeholder="synonymous" class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
 

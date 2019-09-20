@@ -13,7 +13,7 @@ passport.use('facebook', new FacebookStrategy({
     clientSecret: '0cc382b0cb986d89854786750286c981',
     callbackURL: "/auth/facebook/callback",
     //profileFields: ["id", "displayName", "provider", "photos"],
-  },async function(accessToken, refreshToken, profile, cb) {
+  },async function(accessToken, refreshToken, profile, cb, done) {
       /*
     User.findOrCreate({ facebookId: profile.id }, function (err, user) {
       return cb(err, user);
@@ -21,7 +21,7 @@ passport.use('facebook', new FacebookStrategy({
     */
 
     console.log(profile._json);
-    
+    done();
 
   }
 ));

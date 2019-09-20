@@ -55,5 +55,10 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook',{
 }));
 
 
+router.get('/success', (req, res)=>{
+    res.send('ya estas logueado con facebook');
+});
+
+
 
 module.exports = router;

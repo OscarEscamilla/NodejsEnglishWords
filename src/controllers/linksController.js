@@ -10,9 +10,9 @@ controller = {}
 
 controller.list = async(req, res) =>{
     const id_user = req.user.id;
-    const links = await model.get_all(id_user);
+    const words = await model.get_all(id_user);
     console.log('datos obtenidos correctamente')
-    res.render('links/list.hbs',{links});
+    res.render('links/list.hbs',{words});
     
     /*
     const result = [];
@@ -29,16 +29,18 @@ controller.form_add = (req, res) =>{
 
 
 controller.save_link = async(req, res) =>{
-    const {title , url, description} = req.body;
+    const {word, pronunciation, meaning, example, synonymous  } = req.body;
     const id_user = req.user.id;
-    const newLink = {
-        title,
-        url,
-        description,
+    const newWord = {
+        word, 
+        pronunciation, 
+        meaning,
+        example, 
+        synonymous,
         id_user
-    };
+    } 
 
-    const result = await model.save(newLink); /*con.query('INSERT INTO links set ?', [newLink]);*/
+    const result = await model.save(newWord); /*con.query('INSERT INTO links set ?', [newLink]);*/
     
     if(result.affectedRows == 1){
         req.flash('success', '!Link guardado correctamente!');
@@ -68,17 +70,20 @@ controller.update_form = async(req, res ) => {
 
     console.log(result[0]);
 
-    res.render('links/edit.hbs',{ link: result[0]});
+    res.render('links/edit.hbs',{ word: result[0]});
 }
 
 controller.update = async(req, res) =>{
     const {id} = req.params;
-    const {title, url, description} = req.body
+    const {word, pronunciation, meaning, example, synonymous  } = req.body
     const data = {
-        title,
-        url,
-        description
-    };
+        word,
+        pronunciation,
+        meaning,
+        example,
+        synonymous  
+    }
+
     const result = await model.update(data, id);
 
     if(result.affectedRows == 1){

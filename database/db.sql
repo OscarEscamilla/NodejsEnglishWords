@@ -14,11 +14,13 @@ CREATE TABLE IF NOT EXISTS users(
 
 
 -- links table --
-CREATE TABLE IF NOT EXISTS links(
+CREATE TABLE IF NOT EXISTS words(
     id INT(11) NOT NULL AUTO_INCREMENT,
-    title VARCHAR(30) NOT NULL,
-    url VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
+    word VARCHAR(30) NOT NULL,
+    meaning TEXT NOT NULL,
+    pronunciation VARCHAR(255) NOT NULL,
+    example TEXT NOT NULL,
+    synonymous VARCHAR(100),
     id_user int(11) NULL,
     create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id),
