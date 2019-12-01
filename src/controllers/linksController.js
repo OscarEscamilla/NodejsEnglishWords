@@ -1,18 +1,14 @@
 const con = require('../database.js');
 const model = require('../models/modelLinks.js');
 
-
-
-
 controller = {}
-
-
 
 controller.list = async(req, res) =>{
     const id_user = req.user.id;
     const words = await model.get_all(id_user);
     console.log('datos obtenidos correctamente')
-    res.render('links/list.hbs',{words});
+    const num = words.length;
+    res.render('links/list.hbs',{words, num});
     
     /*
     const result = [];
@@ -48,7 +44,7 @@ controller.save_link = async(req, res) =>{
         console.log('***Insert data complet***');
         
     }
-    res.redirect('/links');
+    res.render('links/add.hbs');
 }
 
 

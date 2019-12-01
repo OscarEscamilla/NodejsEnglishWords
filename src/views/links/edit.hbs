@@ -8,10 +8,12 @@
                 <div class="bg-grey card-body">
                     <form action="/links/update/{{word.id}}" method="post">
                         <div class="form-group">
-                            <input type="text" name="word" placeholder="word" value={{word.word}} class="form-control form-control-sm" autofocus>
+                            <label for="">Word</label>
+                            <input type="text" name="word" placeholder="word" value="{{word.word}}" class="form-control form-control-sm" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="pronunciation" placeholder="pronunciation" value={{word.pronunciation}}  class="form-control form-control-sm">
+                            <label for="">Pronunciation</label>
+                            <input type="text" name="pronunciation" placeholder="pronunciation" value="{{word.pronunciation}}" class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
                             <label for="">Meaning</label>
@@ -22,7 +24,8 @@
                             <textarea name="example" id="" cols="10" rows="3" class="form-control form-control-sm">{{word.example}}</textarea>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="synonymous" placeholder="synonymous" value={{word.synonymous}} class="form-control form-control-sm">
+                            <label for="">Synonymous</label>
+                            <input type="text" name="synonymous" placeholder="synonymous" value="{{word.synonymous}}" class="form-control form-control-sm">
                         </div>
                         <div class="form-group">
                              <button type="submit" class="btn btn-success btn-sm btn-block">Save <i class="far fa-save"></i></button>

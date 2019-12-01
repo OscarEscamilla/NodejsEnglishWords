@@ -34,19 +34,7 @@ app.engine('.hbs', expresshbs({
 
 app.set('view engine', '.hbs' );
 
-
-
-/*database config 
-app.use(myConnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    port: '3306',
-    database: 'app_links'
-}, 'single'));*/
-//public 
-
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //midlewares

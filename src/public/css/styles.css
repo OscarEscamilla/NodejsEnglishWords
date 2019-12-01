@@ -7,10 +7,8 @@
 
 body{
     height: 100%;
-
     background-image: url('../img/free-wallpaper.jpg');
-    background-repeat: no-repeat;
-    background-size:100% 100%;
+    background-repeat: initial;
     
 }
 
@@ -23,6 +21,15 @@ body{
 }
 
 .btn-facebook{
-    background-color: rgb(42, 42, 202) !important;
-    border: 0ch;
+    background:  rgb(66, 66, 199) !important;
+    border: 0% !important;
 }
+
+.btn{
+    border-radius: 0% !important;
+}
+
+input:focus{
+    border-bottom-color: brown !important
+}
+

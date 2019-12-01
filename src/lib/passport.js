@@ -20,8 +20,12 @@ passport.use('facebook', new FacebookStrategy({
     });
     */
 
-    console.log(profile._json);
-    done();
+    console.log(cb);
+    
+    console.log(profile);
+    console.log(refreshToken);
+    await console.log(accessToken);
+   
 
   }
 ));

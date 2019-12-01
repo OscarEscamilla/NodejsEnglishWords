@@ -5,7 +5,9 @@ model = {}
 
 model.get_all = (id_user) => {
   
-    return  con.query('SELECT * FROM words WHERE id_user = ?',[id_user]);
+    return con.query('SELECT * FROM words WHERE id_user = ?',[id_user]);
+
+  
 }
 
 model.delete = (id) =>{

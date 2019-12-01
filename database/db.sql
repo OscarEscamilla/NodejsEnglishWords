@@ -5,7 +5,7 @@ use app_links;
 
 -- user table --
 CREATE TABLE IF NOT EXISTS users(
-    id INT(11) NOT NULL AUTO_INCREMENT,,
+    id INT(11) NOT NULL AUTO_INCREMENT,
     username VARCHAR(20) NOT NULL,
     password VARCHAR(255) NOT NULL,
     fullname VARCHAR(100) NOT NULL,
@@ -24,5 +24,5 @@ CREATE TABLE IF NOT EXISTS words(
     id_user int(11) NULL,
     create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(id),
-    CONSTRAINT fk_user FOREIGN KEY(id_user) REFERENCES user (id)
+    CONSTRAINT fk_user FOREIGN KEY(id_user) REFERENCES users (id)
 );

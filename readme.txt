@@ -1,7 +1,8 @@
 npm install 
 express 
 express-handlebars 
-express-session mysql  
+express-session 
+mysql  
 express-mysql-session 
 morgan bcryptjs 
 passport 

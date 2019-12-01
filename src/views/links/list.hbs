@@ -1,25 +1,23 @@
 <div class="container p-4">
+    <h4 class="mx-auto text-success ml-auto"> # {{num}} </h4>
     <div class="row">
         {{#each words}}
             <div class="col-md-3">
-                <div class="card text-center mb-3">
+                <div class="card  mb-3">
+                        <div class="card-header text-center">
+                            <h3 class="text-primary text-capitalize">{{word}}</h3>
+                        </div>
                         <div class="card-body">
-                            <h3 class="text-primary">{{word}}</h3>
-                            <p>
-                                Pronunciation: {{pronunciation}}
-                            </p>
-                            <p class="">
-                               Meaning: {{meaning}} 
-                            </p>
-                            <p class="">
-                               Example: {{example}} 
-                            </p>
-                            <p>{{time_ago create_at}}</p>
+                            <p>Pronunciation: {{pronunciation}} </p>
+                            <p class=""> Meaning: {{meaning}} </p>
+                            <p class=""> Example: {{example}} </p>
+                            <p class=""> Synonymous: {{synonymous}} </p>
+                            {{!--<p class="text-info text-center">{{time_ago create_at}}</p>--}
                             {{!--<a href="/links/delete/{{id}}" class="btn btn-danger btn-sm"></a>--}}
-                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn btn-danger btn-sm btn-block" data-toggle="modal" data-target="#exampleModal">
                                 Delete <i class="fas fa-trash-alt"></i>
                             </button>
-                            <a href="/links/update/{{id}}" class="btn btn-primary btn-sm">Update <i class="fas fa-edit"></i></a>
+                            <a href="/links/update/{{id}}" class="btn btn-primary btn-sm btn-block">Update <i class="fas fa-edit"></i></a>
                         </div>
                 </div>
             </div>
@@ -46,7 +44,7 @@
         {{else}}
             <div class="col-md-4 mx-auto">
                 <div class="card text-center">
-                    <p>No existen links guardados</p>
+                    <p>No existen palabras guardadas</p>
                     <a href="/links/add">Agregar uno</a>
                 </div>
             </div>
